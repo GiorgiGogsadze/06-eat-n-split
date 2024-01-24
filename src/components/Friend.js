@@ -3,7 +3,7 @@ export default function Friend({
   selected,
   setSelected,
 }) {
-  const isSeleted = selected === id;
+  const isSeleted = selected?.id === id;
   return (
     <li className={isSeleted ? "selected" : ""}>
       <img src={image} alt={name} />
@@ -23,7 +23,9 @@ export default function Friend({
 
       <button
         className="button"
-        onClick={() => setSelected(isSeleted ? null : id)}
+        onClick={() =>
+          setSelected(isSeleted ? null : { id, name, image, balance })
+        }
       >
         {isSeleted ? "Close" : "Select"}
       </button>
