@@ -49,7 +49,11 @@ export default function App() {
         <AddFriend handleAddFriend={handleAddFriend} />
       </div>
       {selected ? (
-        <SplitBar selected={selected} handleBalanceAdd={handleBalanceAdd} />
+        <SplitBar
+          selected={selected}
+          handleBalanceAdd={handleBalanceAdd}
+          key={selected.id}
+        />
       ) : null}
     </div>
   );
